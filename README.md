@@ -33,7 +33,7 @@ Features:
 
 > Disclaimer: In order to enhance the vision and usage, we are shadowing our user's interactions. This is solely performed to serve you better
 
-Learn more about our design in the [*E-Resume — Build a professional resume: Design case study* Medium post.](https://uxplanet.org/e-resume-build-a-professional-resume-design-case-study-3dc02a6359ea)
+Learn more about our design in the [_E-Resume — Build a professional resume: Design case study_ Medium post.](https://uxplanet.org/e-resume-build-a-professional-resume-design-case-study-3dc02a6359ea)
 
 ## Contributing Guide
 
@@ -41,7 +41,7 @@ If you are interested in contributing (fixing bugs, impoving features, or creati
 
 ## Report Bugs and Feature Requests
 
-File a [bug report](https://github.com/sadanandpai/resume-builder/issues/new?assignees=sadanandpai&labels=&template=bug_report.md&title=) or [feature request](https://github.com/sadanandpai/resume-builder/issues/new?assignees=sadanandpai&labels=&template=feature_request.md&title=) using the [New Issues](https://github.com/sadanandpai/resume-builder/issues/new/choose) page. 
+File a [bug report](https://github.com/sadanandpai/resume-builder/issues/new?assignees=sadanandpai&labels=&template=bug_report.md&title=) or [feature request](https://github.com/sadanandpai/resume-builder/issues/new?assignees=sadanandpai&labels=&template=feature_request.md&title=) using the [New Issues](https://github.com/sadanandpai/resume-builder/issues/new/choose) page.
 
 [View all issues.](https://github.com/sadanandpai/resume-builder/issues)
 
