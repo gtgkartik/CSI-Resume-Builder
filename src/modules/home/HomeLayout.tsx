@@ -1,12 +1,11 @@
-import { NavBarActions, StyledButton } from '../builder/nav-bar/atoms';
 import { motion, useAnimation } from 'framer-motion';
-
-import { BsGithub } from 'react-icons/bs';
+import { signInWithPopup } from 'firebase/auth';
+import NavbarDark from './components/NavbarDark';
 import { Button } from '@mui/material';
 import FeatureSection from './components/Feature';
 import Image from 'next/image';
-import Link from 'next/link';
 import Person from './components/Person';
+import { auth, provider } from '../../Firebase';
 
 const HomeLayout = () => {
   const controls = useAnimation();
@@ -22,37 +21,19 @@ const HomeLayout = () => {
     damping: 17,
   };
 
+  const handleSignInWithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+      // Redirect to the /builder page after successful sign-in
+      window.location.href = '/builder';
+    } catch (error) {
+      console.error('Google Sign-In Error:', error);
+    }
+  };
+
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: [0, 1] }} className="scroll-smooth">
-      <nav className="sticky top-0 z-20 h-14 w-full bg-resume-800 flex py-2.5 px-4 xl:px-60 items-center shadow-level-8dp">
-        <Link href="/">
-          <Image src={'/icons/resume-icon.png'} alt="logo" height="36" width="36" />
-        </Link>
-        <div className="flex-auto flex justify-between items-center ml-5">
-          <NavBarActions>
-            <Link href="/builder" passHref={true}>
-              <StyledButton variant="text">Editor</StyledButton>
-            </Link>
-          </NavBarActions>
-          <NavBarActions>
-            <Link href="#contribute" passHref={true}>
-              <StyledButton variant="text" className="max-md:hidden">
-                Contribute
-              </StyledButton>
-            </Link>
-            <Link href="#about-us" passHref={true}>
-              <StyledButton variant="text">About us</StyledButton>
-            </Link>
-            <a
-              href={'https://github.com/sadanandpai/resume-builder'}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <BsGithub className="h-6 w-6" fill="white" />
-            </a>
-          </NavBarActions>
-        </div>
-      </nav>
+      <NavbarDark />
       <div
         style={{
           background: 'linear-gradient(180deg, #E7EEFA 50%, #FFFFFF 100%)',
@@ -93,11 +74,18 @@ const HomeLayout = () => {
                   —Mark Twain
                 </p>
               </div>
-              <Link href="/builder" passHref={true}>
-                <Button variant="contained" className="bg-resume-800 mb-2">
-                  BUILD YOUR RESUME
-                </Button>
-              </Link>
+
+              <button
+                onClick={handleSignInWithGoogle}
+                className="bg-dark flex items-center space-x-4 justify-center w-[300px] p-3 rounded-md"
+                style={{
+                  background: 'linear-gradient(to bottom, #111727, #212c4d)',
+                }}
+              >
+                <Image alt="Google Icon" src={'/icons/googleicon.png'} width={20} height={20} />
+                <a className="text-white">Sign in with Google</a>
+              </button>
+
               <p
                 className="xl:invisible text-resume-800"
                 style={{ fontFamily: "'Roboto Slab', serif" }}
@@ -121,7 +109,7 @@ const HomeLayout = () => {
         </div>
       </motion.div>
 
-      <div className="bg-resume-50 my-32">
+      <div className=" my-32">
         <div
           id="contribute"
           className="mx-6 md:mx-40 xl:mx-60 py-12"
@@ -129,26 +117,26 @@ const HomeLayout = () => {
         >
           <div className="grid grid-cols-12 items-center text-center">
             <div className="col-span-12 lg:col-span-4 mb-4 lg:mb-0 flex flex-col items-center gap-2">
-              <Image src={'/icons/palette.svg'} alt="logo" height="48" width="48" />
-              <p className="text-resume-800 text-xl mt-2">
-                Do you want to make your own <strong>template?</strong>
+              <Image src={'/icons/laptop.gif'} alt="logo" height="120" width="120" />
+              <p className="text-dark text-xl mt-2">
+                Do you want to <strong>build amazing products like Us ?</strong>
               </p>
             </div>
             <div className="col-span-12 lg:col-span-1 mb-4 lg:mb-0 text-resume-800 text-4xl">
               <p>+</p>
             </div>
             <div className="col-span-12 lg:col-span-2 flex flex-col items-center gap-2">
-              <Image src={'/icons/terminal.svg'} alt="logo" height="48" width="48" />
-              <p className="text-resume-800 text-xl mt-2">
-                Do you write <strong>React</strong> code?
+              <Image src={'/icons/browser.gif'} alt="logo" height="120" width="120" />
+              <p className="text-dark text-xl mt-2">
+                Do you <strong>write code?</strong>
               </p>
             </div>
             <div className="invisible lg:visible lg:col-span-2 text-resume-800 text-4xl mx-6">
               <p>=</p>
             </div>
-            <div className="col-span-12 lg:col-span-3 mx-auto flex flex-col items-center gap-2">
+            <div className="col-span-12 lg:col-span-3 mx-auto flex flex-col items-center">
               <div className="mb-6">
-                <Image src={'/icons/wave.svg'} alt="logo" height="48" width="48" />
+                <Image src={'/icons/work.gif'} alt="logo" height="120" width="120" />
               </div>
               <div>
                 <a
@@ -156,8 +144,8 @@ const HomeLayout = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Button variant="contained" className="bg-resume-800 mt-2 lg:mt-5 mb-3">
-                    CONTRIBUTE
+                  <Button variant="contained" className="bg-dark mt-0 lg:mt-5 mb-3">
+                    Join Us
                   </Button>
                 </a>
               </div>
@@ -171,7 +159,7 @@ const HomeLayout = () => {
         className="mx-6 md:mx-40 xl:mx-60 my-32"
         style={{ fontFamily: "'Roboto Slab', serif" }}
       >
-        <h2 className="text-resume-800 text-3xl mb-2 text-center lg:text-left">About us</h2>
+        <h2 className="text-resume-800 text-3xl mb-2 text-center lg:text-left">Contributors</h2>
         <p className="text-resume-400 mb-8 text-center lg:text-left">
           A bunch of developers and designers — who love to build open source projects and learn
           along!
@@ -180,14 +168,14 @@ const HomeLayout = () => {
           <Person />
         </div>
         <p className="text-resume-400 my-8 text-center lg:text-left">
-          Read our design story on&nbsp;
+          Follow Us on &nbsp;
           <a
             href="https://medium.com/@yakshag/e-resume-build-a-professional-resume-design-case-study-3dc02a6359ea"
             target="_blank"
             rel="noreferrer"
             className="underline"
           >
-            Medium
+            Social Media
           </a>
           ↗
         </p>

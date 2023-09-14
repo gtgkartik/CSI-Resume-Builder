@@ -1,33 +1,38 @@
 import Image from 'next/image';
-
+//
 const persons = [
   {
-    name: 'Sadanand Pai',
-    role: 'Frontend developer',
-    avatar: 'https://avatars.githubusercontent.com/u/12962887?v=4',
-    github: 'https://github.com/sadanandpai',
-    linkedin: 'https://www.linkedin.com/in/sadanandpai/',
+    name: 'Kartik Kumar',
+    role: 'React JS Developer',
+    avatar:
+      'https://lh3.googleusercontent.com/a/ACg8ocJL-_J7Y-G6DaEr3Tn6qAcNxKTi1blheoOXzArZzfYXPqg=s360-c-no',
+    github: 'https://github.com/kartikkumar999',
+    linkedin: 'https://www.linkedin.com/in/thisiskartik/',
+    Instagram: 'https://www.instagram.com/thisiskartik._/',
   },
   {
-    name: 'Gopalakrishnan',
-    role: 'Frontend developer',
-    avatar: 'https://avatars.githubusercontent.com/u/22369081?v=4',
-    github: 'https://github.com/gopal1996',
-    linkedin: 'https://www.linkedin.com/in/gopal1996',
+    name: 'Akshay Allenki',
+    role: 'React JS Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/111362177?v=4',
+    github: 'https://github.com/allenkiakshay',
+    linkedin: '',
+    Instagram: '',
   },
   {
-    name: 'Vivek G',
-    role: 'Product designer, half developer',
-    avatar: 'https://avatars.githubusercontent.com/u/26523871?v=4',
-    github: 'https://github.com/yakshaG',
-    linkedin: 'https://www.linkedin.com/in/vivek-g-india',
+    name: 'Sai Charan Venna',
+    role: 'UI/UX Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/89190019?v=4',
+    github: 'https://github.com/charan7105',
+    linkedin: 'https://www.linkedin.com/in/saicharanvenna/',
+    Instagram: 'https://www.instagram.com/charan_.here/',
   },
   {
-    name: 'Siva K',
-    role: 'Frontend developer',
-    avatar: 'https://avatars.githubusercontent.com/u/60533560?v=4',
-    github: 'https://github.com/siva-kannan3',
-    linkedin: 'https://www.linkedin.com/in/siva-kannan3/',
+    name: 'H.V Mallesh',
+    role: 'UI/UX Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/90507610?v=4',
+    github: 'https://github.com/MALLESH18',
+    linkedin: 'https://www.linkedin.com/in/mallesh-hv-9a8702239/',
+    Instagram: 'https://www.instagram.com/mallesh._.hanumanthu',
   },
 ];
 
@@ -37,13 +42,24 @@ const PersonCard = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-const ProfileSocial = ({ github, linkedin }: { github: string; linkedin: string }) => (
-  <div className="flex gap-4">
+const ProfileSocial = ({
+  github,
+  linkedin,
+  Instagram,
+}: {
+  github: string;
+  linkedin: string;
+  Instagram: string;
+}) => (
+  <div className="flex gap-4 items-center">
     <a href={github} target="_blank" rel="noreferrer">
       <Image src="/icons/github.svg" alt="github" width="24" height="24" />
     </a>
     <a href={linkedin} target="_blank" rel="noreferrer">
       <Image src="/icons/linkedin.svg" alt="linkedin" width="24" height="24" />
+    </a>
+    <a href={Instagram} target="_blank" rel="noreferrer" className="">
+      <Image src="/icons/instagram.svg" alt="linkedin" width="28" height="28" />
     </a>
   </div>
 );
@@ -62,7 +78,11 @@ export default function Person() {
           />
           <p className="text-resume-800 mt-4 font-bold">{person.name}</p>
           <p className="text-resume-400 mb-6">{person.role}</p>
-          <ProfileSocial github={person.github} linkedin={person.linkedin} />
+          <ProfileSocial
+            github={person.github}
+            linkedin={person.linkedin}
+            Instagram={person.Instagram}
+          />
         </PersonCard>
       ))}
     </>

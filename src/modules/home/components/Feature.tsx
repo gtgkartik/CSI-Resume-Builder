@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, useAnimation } from 'framer-motion';
 
 function FeatureSection() {
   return (
@@ -8,7 +9,7 @@ function FeatureSection() {
         <CardPinnnedIcon>
           <Image src="/icons/style.svg" alt="style" height="56" width="56" />
         </CardPinnnedIcon>
-        <p className="text-xl mr-14">
+        <p className="text-xl mr-14 text-white">
           Customise with <strong>templates and themes</strong>!
         </p>
       </FeatureCard>
@@ -17,7 +18,7 @@ function FeatureSection() {
         <CardPinnnedIcon>
           <Image src="/icons/speed.svg" alt="speed" height="56" width="56" />
         </CardPinnnedIcon>
-        <p className="text-xl mr-14">
+        <p className="text-xl mr-14 text-white ">
           Simple <strong>interface</strong> that helps you build quicky!
         </p>
       </FeatureCard>
@@ -26,7 +27,7 @@ function FeatureSection() {
         <CardPinnnedIcon>
           <Image src="/icons/magic.svg" alt="magic" height="56" width="56" />
         </CardPinnnedIcon>
-        <p className="text-xl mr-14">
+        <p className="text-xl mr-14 text-white">
           No <strong>sign up </strong>needed — go straight to building!
         </p>
       </FeatureCard>
@@ -35,8 +36,8 @@ function FeatureSection() {
         <CardPinnnedIcon>
           <Image src="/icons/lock.svg" alt="lock" height="56" width="56" />
         </CardPinnnedIcon>
-        <p className="text-xl mr-14">
-          Your <strong>data</strong> never leaves your device
+        <p className="text-xl mr-14 text-white">
+          We dont collect your <strong>data</strong>, We value your privacy
         </p>
       </FeatureCard>
     </>
@@ -44,15 +45,32 @@ function FeatureSection() {
 }
 
 const FeatureCard = ({ children }: { children: React.ReactNode }) => {
+  const controls = useAnimation();
+  const animationEffectsHoverEnter = { scale: 1.05 };
+  const animationEffectsHoverLeave = { scale: 1 };
+
+  const transtionEffects = {
+    type: 'spring',
+    stiffness: 400,
+    damping: 30,
+  };
+
   return (
-    <Link href="/builder" passHref={true}>
-      <div
-        className={`transition ease-in-out delay-100 duration-300 bg-resume-100 hover:bg-resume-500 text-resume-800
-      hover:text-resume-50 fill-resume-800 px-6 py-10 lg:p-12 flex shadow-md cursor-pointer relative rounded-xl`}
-      >
-        {children}
-      </div>
-    </Link>
+    <motion.div
+      className={`transition ease-in-out delay-100 duration-300 text-resume-800 hover:text-resume-50 fill-resume-800 px-6 py-10 lg:p-12 flex shadow-md cursor-pointer relative rounded-xl`}
+      style={{
+        background: 'linear-gradient(to bottom, #111727, #212c4d)',
+      }}
+      onMouseEnter={() => {
+        controls.start(animationEffectsHoverEnter, transtionEffects);
+      }}
+      onMouseLeave={() => {
+        controls.start(animationEffectsHoverLeave, transtionEffects);
+      }}
+      animate={controls}
+    >
+      {children}
+    </motion.div>
   );
 };
 
