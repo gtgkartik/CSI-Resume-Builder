@@ -64,7 +64,9 @@ const HomeLayout = () => {
             </div>
             <div className="col-span-12 sm:col-span-8">
               <h3 className="text-xl md:text-2xl mb-2 text-resume-400">SIMPLEST WAY TO BUILD A</h3>
-              <h1 className="text-5xl mb-12 text-resume-800">Professional Resume</h1>
+              <h1 className="md:text-5xl sm:text-2xl ls:text-4xl mb-12 text-dark">
+                Professional Resume
+              </h1>
 
               <div className="flex mb-10">
                 <div className="bg-resume-800 w-1 rounded-lg"></div>
@@ -77,13 +79,13 @@ const HomeLayout = () => {
 
               <button
                 onClick={handleSignInWithGoogle}
-                className="bg-dark flex items-center space-x-4 justify-center w-[300px] p-3 rounded-md"
+                className="  bg-dark flex items-center space-x-4 justify-center  md:w-[300px] ls:w-[200px] p-3 rounded-md"
                 style={{
                   background: 'linear-gradient(to bottom, #111727, #212c4d)',
                 }}
               >
                 <Image alt="Google Icon" src={'/icons/googleicon.png'} width={20} height={20} />
-                <a className="text-white">Sign in with Google</a>
+                <a className="text-white ls:text-[15px] sm:text-[12px]">Sign in with Google</a>
               </button>
 
               <p
