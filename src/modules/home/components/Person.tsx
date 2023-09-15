@@ -15,8 +15,8 @@ const persons = [
     role: 'React JS Developer',
     avatar: 'https://avatars.githubusercontent.com/u/111362177?v=4',
     github: 'https://github.com/allenkiakshay',
-    linkedin: '',
-    Instagram: '',
+    linkedin: 'https://www.linkedin.com/in/allenki-akshay/',
+    Instagram: 'https://www.instagram.com/allenki_akshay/',
   },
   {
     name: 'Sai Charan Venna',
@@ -76,8 +76,8 @@ export default function Person() {
             height="96"
             width="96"
           />
-          <p className="text-resume-800 mt-4 font-bold">{person.name}</p>
-          <p className="text-resume-400 mb-6">{person.role}</p>
+          <p className="text-resume-800 mt-4 font-juneauBold">{person.name}</p>
+          <p className="text-resume-400 mb-6 font-juneauRegular">{person.role}</p>
           <ProfileSocial
             github={person.github}
             linkedin={person.linkedin}

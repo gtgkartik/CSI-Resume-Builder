@@ -25,14 +25,22 @@ const NavbarDark = (props: any): JSX.Element => {
         <div className="flex">
           <div className="md:flex sm:hidden">
             <ul className="flex font-inter items-center mr-[86px] space-x-5 sm:flex  text-white">
-              <li className="cursor-pointer" onClick={scrollToAboutUs}>
-                Contributors
+              <li className="cursor-pointer">
+                <a href="/">Home</a>
+              </li>
+              <li className="cursor-pointer">
+                <a href="/Contributors">Contributors</a>
               </li>
               {/* <li className="cursor-pointer">About Us</li> */}
               {/* <li className="cursor-pointer">Contact Us</li> */}
               <li className="cursor-pointer">
                 <a target="#" href="https://www.instagram.com/csi_vitap/">
                   Follow Us
+                </a>
+              </li>
+              <li className="cursor-pointer">
+                <a target="#" href="https://isj4dugg0q2.typeform.com/to/BvoJJGN1">
+                  Feedback
                 </a>
               </li>
             </ul>

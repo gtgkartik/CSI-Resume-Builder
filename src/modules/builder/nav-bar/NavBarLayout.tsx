@@ -131,6 +131,7 @@ const NavBarLayout = () => {
           />
           <NavMenuItem caption="Colours" popoverChildren={<ThemeSelect />} />
         </NavBarMenu>
+
         <NavBarActions>
           <StyledButton variant="text" onClick={exportResumeData}>
             Export
@@ -156,6 +157,7 @@ const NavBarLayout = () => {
           <PrintResume />
         </NavBarActions>
       </div>
+
       <Toast
         open={openToast}
         onClose={() => {

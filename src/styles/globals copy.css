@@ -46,10 +46,10 @@ code {
 
 @font-face {
   font-family: JuneauBold;
-  src: url('./JuneauDEMO-Bold.otf');
+  src: url('/public/JuneauDEMO-Bold.otf');
 }
 
 @font-face {
   font-family: JuneauRegular;
-  src: url('./JuneauDEMO-Regular.otf');
+  src: url('/public/JuneauDEMO-Regular.otf');
 }

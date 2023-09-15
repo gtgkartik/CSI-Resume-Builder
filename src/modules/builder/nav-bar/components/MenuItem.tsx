@@ -28,7 +28,7 @@ export const NavMenuItem = ({ caption, popoverChildren }: INavMenuItemProps) => 
             alt="dropdown-arrow"
             width="20"
             height="20"
-            className={`${anchorEl ? 'scale-y-[-1]' : ''}`}
+            className={`${anchorEl ? 'scale-y-[-1]' : ''} font-juneauBold`}
           />
         }
       >
