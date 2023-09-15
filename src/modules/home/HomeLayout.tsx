@@ -38,14 +38,14 @@ const HomeLayout = () => {
   };
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: [0, 1] }} className="scroll-smooth">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: [0, 1] }} className="scroll-smooth ">
       <NavbarDark />
-      <div className="w-full h-screen md:flex sm:justify-center">
+      <div className="w-full h-screen md:flex sm:justify-center ">
         <div className="w-3/5 h-full sm:hidden md:flex ">
           <Image src={'/icons/authimage.jpg'} className="" alt="logo" height="200" width="1000" />
         </div>
 
-        <div className="w-2/5 h-full md:pl-8 md:flex-col sm:p-5">
+        <div className="w-2/5 h-full md:pl-8 md:flex-col sm:p-5 ">
           {/* Csi logo and text  */}
           <div className="mt-[60px] top-[70px]">
             <div className="flex items-center font-bold space-x-2">
@@ -74,7 +74,7 @@ const HomeLayout = () => {
                 </p>
               </div>
             </div>
-            <div className="flex relative pt-[60px]">
+            <div className="flex relative pt-[60px]  ">
               <button
                 onClick={handleSignInWithGoogle}
                 className="bg-dark flex items-center space-x-4 justify-center w-[300px] p-3 rounded-md"
@@ -85,8 +85,8 @@ const HomeLayout = () => {
             </div>
           </div>
 
-          <div className="flex pt-[30px]">
-            <p className="md: relative">© CSI CHAPTER 2023</p>
+          <div className="flex pt-[30px] ">
+            <p className="sm:text-[10px] ls:text-[15px] font-juneauRegular">© CSI CHAPTER 2023</p>
           </div>
         </div>
       </div>
