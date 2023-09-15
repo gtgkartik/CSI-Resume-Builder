@@ -6,9 +6,12 @@ const HomePage: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Resume Builder</title>
-        <meta name="description" content="Single Page Resume Builder" />
-        <link rel="icon" type="image/png" href="/icons/resume-icon.png" />
+        <title>Resume Builder by CSI VIT-AP</title>
+        <meta
+          name="description"
+          content="Resume Builder, proudly presented by CSI Chapter VIT-AP"
+        />
+        <link rel="icon" type="image/png" href="/icons/logo.png" />
       </Head>
 
       <HomeLayout />

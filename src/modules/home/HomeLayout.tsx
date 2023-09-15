@@ -6,8 +6,14 @@ import FeatureSection from './components/Feature';
 import Image from 'next/image';
 import Person from './components/Person';
 import { auth, provider } from '../../Firebase';
+import { useState } from 'react';
 
 const HomeLayout = () => {
+  const [showFullText, setShowFullText] = useState(false);
+
+  const handleSeeMoreClick = () => {
+    setShowFullText(!showFullText);
+  };
   const controls = useAnimation();
   const animationEffectsHoverEnter = { scale: 1.05 };
   const animationEffectsHoverLeave = { scale: 1 };
@@ -55,7 +61,20 @@ const HomeLayout = () => {
 
           <div className="pt-5 mt-5 border-t-solid border-t-4 ls:w-[500px]  sm:w-[300px] border-t-green">
             <h1 className="font-juneauBold text-[32px]">Nice to see you here.</h1>
-            <div className="flex  pt-10">
+            <div className="ls:w-[500px]  sm:w-[300px] top-3 relative font-juneauRegular">
+              <div className="relative opacity-75">
+                Resume Builder, proudly presented by CSI Chapter VIT-AP with an easy-to-use layout
+                and professional assistance, makes creating an amazing resume easy for people at all
+                stages of their careers. Join us on your professional path, and let the CSI Chapter
+                at VIT-AP's Resume Builder be your trusted partner in creating a resume that will
+                make an impact. Your success story starts right here.
+                <p className="top-4 relative">
+                  Note: We are in the Beta stage, therefore there may be some UX or technical issues
+                  that will be resolved shortly.
+                </p>
+              </div>
+            </div>
+            <div className="flex relative pt-[60px]">
               <button
                 onClick={handleSignInWithGoogle}
                 className="bg-dark flex items-center space-x-4 justify-center w-[300px] p-3 rounded-md"
@@ -65,8 +84,9 @@ const HomeLayout = () => {
               </button>
             </div>
           </div>
-          <div className="flex pt-5">
-            <p className="md:left-[80px] relative">© CSI CHAPTER 2023</p>
+
+          <div className="flex pt-[30px]">
+            <p className="md: relative">© CSI CHAPTER 2023</p>
           </div>
         </div>
       </div>

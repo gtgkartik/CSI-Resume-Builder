@@ -24,7 +24,7 @@ const NavbarDark = (props: any): JSX.Element => {
         {/* Middle part  */}
         <div className="flex">
           <div className="md:flex sm:hidden">
-            <ul className="flex font-inter items-center mr-[86px] space-x-5 sm:flex  text-white">
+            <ul className="flex font-inter items-center mr-[86px] space-x-7 sm:flex  text-white">
               <li className="cursor-pointer">
                 <a href="/">Home</a>
               </li>
