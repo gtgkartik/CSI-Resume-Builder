@@ -53,7 +53,7 @@ const HomeLayout = () => {
           </div>
           {/* end of csi logo and text  */}
 
-          <div className="pt-5 mt-5 border-t-solid border-t-4 ls:w-[500px]  sm:w-[400px] border-t-green">
+          <div className="pt-5 mt-5 border-t-solid border-t-4 ls:w-[500px]  sm:w-[300px] border-t-green">
             <h1 className="font-juneauBold text-[32px]">Nice to see you here.</h1>
             <div className="flex  pt-10">
               <button
